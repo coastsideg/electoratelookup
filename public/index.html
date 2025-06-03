@@ -10,22 +10,52 @@
     button { padding: 8px 12px; }
     #result, #labor-representatives { margin-top: 20px; }
     .error { color: red; }
+    #password-screen {
+      text-align: center;
+      margin-top: 100px;
+    }
   </style>
 </head>
 <body>
-  <h1>Find Your Federal and State Electorate</h1>
-  <p>Enter your full WA address (e.g., <em>131 Guildford Road Maylands WA</em>):</p>
-  <input type="text" id="address" placeholder="Enter address" />
-  <button onclick="lookupElectorates()">Lookup</button>
 
-  <div id="result"></div>
-  <div id="labor-representatives"></div>
+  <!-- 🔐 Password Screen -->
+  <div id="password-screen">
+    <h2>Enter Password to Access</h2>
+    <input type="password" id="site-password" placeholder="Password" />
+    <button onclick="checkPassword()">Enter</button>
+    <p id="password-error" class="error"></p>
+  </div>
+
+  <!-- 🗳️ Main App -->
+  <div id="main-content" style="display:none;">
+    <h1>Find Your Federal and State Electorate</h1>
+    <p>Enter your full WA address (e.g., <em>1 St Georges Terrace Perth WA</em>):</p>
+    <input type="text" id="address" placeholder="Enter address" />
+    <button onclick="lookupElectorates()">Lookup</button>
+
+    <div id="result"></div>
+    <div id="labor-representatives"></div>
+  </div>
 
   <script>
+    function checkPassword() {
+      const input = document.getElementById('site-password').value;
+      const error = document.getElementById('password-error');
+
+      if (input === 'CookAlbanese2025') {
+        document.getElementById('password-screen').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+      } else {
+        error.textContent = 'Incorrect password';
+      }
+    }
+
     async function lookupElectorates() {
       const address = document.getElementById('address').value;
       const result = document.getElementById('result');
+      const reps = document.getElementById('labor-representatives');
       result.innerHTML = 'Looking up...';
+      reps.innerHTML = '';
 
       try {
         const res = await fetch('/lookup', {
@@ -39,19 +69,16 @@
 
         if (!data.federal && !data.state) {
           result.innerHTML = '<p class="error">Could not determine your electorates.</p>';
-          document.getElementById("labor-representatives").innerHTML = '';
         } else {
           result.innerHTML = `
             <p><strong>Federal Electorate:</strong> ${data.federal?.Elect_div || 'Unknown'}</p>
             <p><strong>State Electorate:</strong> ${data.state?.Name || 'Unknown'}</p>
           `;
 
-          // Call to load Labor MPs/Duty MPs
-          await loadLaborReps(data.state?.Name, data.federal?.Elect_div);
+          loadLaborReps(data.state?.Name, data.federal?.Elect_div);
         }
       } catch (err) {
         result.innerHTML = `<p class="error">Error: ${err.message}</p>`;
-        document.getElementById("labor-representatives").innerHTML = '';
       }
     }
 
@@ -68,16 +95,16 @@
       const federalInfo = federalData[federalElectorate] || {};
 
       const resultsDiv = document.getElementById("labor-representatives");
-      resultsDiv.innerHTML = ""; // clear previous
+      resultsDiv.innerHTML = "";
 
       if (stateInfo.state_labor_mp) {
-        resultsDiv.innerHTML += `<p>✅ <strong>State Labor MP:</strong> ${stateInfo.state_labor_mp}</p>`;
+        resultsDiv.innerHTML += `<p><strong>State Labor MP:</strong> ${stateInfo.state_labor_mp}</p>`;
       }
       if (stateInfo.state_labor_duty_mlc) {
-        resultsDiv.innerHTML += `<p>✅ <strong>State Labor Duty MLC:</strong> ${stateInfo.state_labor_duty_mlc}</p>`;
+        resultsDiv.innerHTML += `<p><strong>State Labor Duty MLC:</strong> ${stateInfo.state_labor_duty_mlc}</p>`;
       }
       if (federalInfo.federal_labor_mp) {
-        resultsDiv.innerHTML += `<p>✅ <strong>Federal Labor MP:</strong> ${federalInfo.federal_labor_mp}</p>`;
+        resultsDiv.innerHTML += `<p><strong>Federal Labor MP:</strong> ${federalInfo.federal_labor_mp}</p>`;
       }
     }
   </script>
