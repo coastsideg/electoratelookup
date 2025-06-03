@@ -1,0 +1,250 @@
+{
+  "Albany": {
+    "state_labor_mp": null,
+    "state_labor_duty_mlc": "Samantha Rowe MLC"
+  },
+  "Armadale": {
+    "state_labor_mp": "Tony Buti MP",
+    "state_labor_duty_mlc": null
+  },
+  "Balcatta": {
+    "state_labor_mp": "David Michael MP",
+    "state_labor_duty_mlc": null
+  },
+  "Baldivis": {
+    "state_labor_mp": "Reece Whitby MP",
+    "state_labor_duty_mlc": null
+  },
+  "Bassendean": {
+    "state_labor_mp": "Dave Kelly MP",
+    "state_labor_duty_mlc": null
+  },
+  "Bateman": {
+    "state_labor_mp": "Kim Giddens MP",
+    "state_labor_duty_mlc": null
+  },
+  "Belmont": {
+    "state_labor_mp": "Cassie Rowe MP",
+    "state_labor_duty_mlc": null
+  },
+  "Bibra Lake": {
+    "state_labor_mp": "Sook Yee Lai MP",
+    "state_labor_duty_mlc": null
+  },
+  "Bicton": {
+    "state_labor_mp": "Lisa O'Malley MP",
+    "state_labor_duty_mlc": null
+  },
+  "Bunbury": {
+    "state_labor_mp": "Don Punch MP",
+    "state_labor_duty_mlc": null
+  },
+  "Butler": {
+    "state_labor_mp": "Lorna Clarke MP",
+    "state_labor_duty_mlc": null
+  },
+  "Cannington": {
+    "state_labor_mp": "Ron Sao MP",
+    "state_labor_duty_mlc": null
+  },
+  "Carine": {
+    "state_labor_mp": null,
+    "state_labor_duty_mlc": "Pierre Yang MLC"
+  },
+  "Central Wheatbelt": {
+    "state_labor_mp": null,
+    "state_labor_duty_mlc": "Sandra Carr MLC"
+  },
+  "Churchlands": {
+    "state_labor_mp": null,
+    "state_labor_duty_mlc": "Dan Caddy MLC"
+  },
+  "Cockburn": {
+    "state_labor_mp": "David Scaife MP",
+    "state_labor_duty_mlc": null
+  },
+  "Collie-Preston": {
+    "state_labor_mp": "Jodie Hanns MP",
+    "state_labor_duty_mlc": null
+  },
+  "Cottesloe": {
+    "state_labor_mp": null,
+    "state_labor_duty_mlc": "Ayor Makur Chuot MLC"
+  },
+  "Darling Range": {
+    "state_labor_mp": "Hugh Jones MP",
+    "state_labor_duty_mlc": null
+  },
+  "Dawesville": {
+    "state_labor_mp": "Lisa Munday MP",
+    "state_labor_duty_mlc": null
+  },
+  "Forrestfield": {
+    "state_labor_mp": "Stephen Price MP",
+    "state_labor_duty_mlc": null
+  },
+  "Fremantle": {
+    "state_labor_mp": "Simone McGurk MP",
+    "state_labor_duty_mlc": null
+  },
+  "Geraldton": {
+    "state_labor_mp": null,
+    "state_labor_duty_mlc": "Sandra Carr MLC"
+  },
+  "Girrawheen": {
+    "state_labor_mp": "Meredith Hammat MP",
+    "state_labor_duty_mlc": null
+  },
+  "Hillarys": {
+    "state_labor_mp": "Caitlin Collins MP",
+    "state_labor_duty_mlc": null
+  },
+  "Jandakot": {
+    "state_labor_mp": "Stephen Pratt MP",
+    "state_labor_duty_mlc": null
+  },
+  "Joondalup": {
+    "state_labor_mp": "Emily Hamilton MP",
+    "state_labor_duty_mlc": null
+  },
+  "Kalamunda": {
+    "state_labor_mp": null,
+    "state_labor_duty_mlc": "Klasey Hirst MLC"
+  },
+  "Kalgoorlie": {
+    "state_labor_mp": "Ali Kent MP",
+    "state_labor_duty_mlc": null
+  },
+  "Kimberley": {
+    "state_labor_mp": "Divina D'Anna MP",
+    "state_labor_duty_mlc": null
+  },
+  "Kingsley": {
+    "state_labor_mp": "Jessica Stojkovski MP",
+    "state_labor_duty_mlc": null
+  },
+  "Kwinana": {
+    "state_labor_mp": "Roger Cook MP",
+    "state_labor_duty_mlc": null
+  },
+  "Landsdale": {
+    "state_labor_mp": "Daniel Pastorelli MP",
+    "state_labor_duty_mlc": null
+  },
+  "Mandurah": {
+    "state_labor_mp": "Rhys Williams MP",
+    "state_labor_duty_mlc": null
+  },
+  "Maylands": {
+    "state_labor_mp": "Dan Bull MP",
+    "state_labor_duty_mlc": null
+  },
+  "Midland": {
+    "state_labor_mp": "Steve Catania MP",
+    "state_labor_duty_mlc": null
+  },
+  "Mid-West": {
+    "state_labor_mp": null,
+    "state_labor_duty_mlc": "Sandra Carr MLC"
+  },
+  "Mirrabooka": {
+    "state_labor_mp": "John Quigley MP",
+    "state_labor_duty_mlc": null
+  },
+  "Morley": {
+    "state_labor_mp": "Amber-Jade Sanderson MP",
+    "state_labor_duty_mlc": null
+  },
+  "Mount Lawley": {
+    "state_labor_mp": "Frank Paolino MP",
+    "state_labor_duty_mlc": null
+  },
+  "Murray-Wellington": {
+    "state_labor_mp": null,
+    "state_labor_duty_mlc": null
+  },
+  "Nedlands": {
+    "state_labor_mp": null,
+    "state_labor_duty_mlc": "Ayor Makur Chuot MLC"
+  },
+  "Oakford": {
+    "state_labor_mp": "Yaz Mubarakai MP",
+    "state_labor_duty_mlc": null
+  },
+  "Perth": {
+    "state_labor_mp": "John Carey MP",
+    "state_labor_duty_mlc": null
+  },
+  "Pilbara": {
+    "state_labor_mp": "Kevin Michel MP",
+    "state_labor_duty_mlc": null
+  },
+  "Riverton": {
+    "state_labor_mp": "Jags Krishnan MP",
+    "state_labor_duty_mlc": null
+  },
+  "Rockingham": {
+    "state_labor_mp": "Magenta Marshall MP",
+    "state_labor_duty_mlc": null
+  },
+  "Roe": {
+    "state_labor_mp": null,
+    "state_labor_duty_mlc": "Sandra Carr MLC"
+  },
+  "Scarborough": {
+    "state_labor_mp": "Stuart Aubrey MP",
+    "state_labor_duty_mlc": null
+  },
+  "Secret Harbour": {
+    "state_labor_mp": "Paul Papalia MP",
+    "state_labor_duty_mlc": null
+  },
+  "South Perth": {
+    "state_labor_mp": "Geoff Baker MP",
+    "state_labor_duty_mlc": null
+  },
+  "Southern River": {
+    "state_labor_mp": "Terry Healy MP",
+    "state_labor_duty_mlc": null
+  },
+  "Swan Hills": {
+    "state_labor_mp": "Michelle Maynard MP",
+    "state_labor_duty_mlc": null
+  },
+  "Thornlie": {
+    "state_labor_mp": "Colleen Egan MP",
+    "state_labor_duty_mlc": null
+  },
+  "Vasse": {
+    "state_labor_mp": null,
+    "state_labor_duty_mlc": "Jackie Jarvis MLC"
+  },
+  "Victoria Park": {
+    "state_labor_mp": "Hannah Beazley MP",
+    "state_labor_duty_mlc": null
+  },
+  "Wanneroo": {
+    "state_labor_mp": "Sabine Winton MP",
+    "state_labor_duty_mlc": null
+  },
+  "Warren-Blackwood": {
+    "state_labor_mp": null,
+    "state_labor_duty_mlc": null
+  },
+  "West Swan": {
+    "state_labor_mp": "Rita Saffioti MP",
+    "state_labor_duty_mlc": null
+  },
+  "Mindarie": {
+    "state_labor_mp": null,
+    "state_labor_duty_mlc": "Alanna Clohesy MLC"
+  },
+  "Murray - Wellington": {
+    "state_labor_mp": null,
+    "state_labor_duty_mlc": "Katrina Stratton MLC"
+  },
+  "Warren - Blackwood": {
+    "state_labor_mp": null,
+    "state_labor_duty_mlc": "Jackie Jarvis MLC"
+  }
+}

@@ -8,7 +8,7 @@
     body { font-family: Arial, sans-serif; margin: 40px; }
     input { width: 300px; padding: 8px; margin-right: 10px; }
     button { padding: 8px 12px; }
-    #result { margin-top: 20px; }
+    #result, #labor-representatives { margin-top: 20px; }
     .error { color: red; }
   </style>
 </head>
@@ -19,6 +19,7 @@
   <button onclick="lookupElectorates()">Lookup</button>
 
   <div id="result"></div>
+  <div id="labor-representatives"></div>
 
   <script>
     async function lookupElectorates() {
@@ -38,14 +39,45 @@
 
         if (!data.federal && !data.state) {
           result.innerHTML = '<p class="error">Could not determine your electorates.</p>';
+          document.getElementById("labor-representatives").innerHTML = '';
         } else {
           result.innerHTML = `
             <p><strong>Federal Electorate:</strong> ${data.federal?.Elect_div || 'Unknown'}</p>
             <p><strong>State Electorate:</strong> ${data.state?.Name || 'Unknown'}</p>
           `;
+
+          // Call to load Labor MPs/Duty MPs
+          await loadLaborReps(data.state?.Name, data.federal?.Elect_div);
         }
       } catch (err) {
         result.innerHTML = `<p class="error">Error: ${err.message}</p>`;
+        document.getElementById("labor-representatives").innerHTML = '';
+      }
+    }
+
+    async function loadLaborReps(stateElectorate, federalElectorate) {
+      const [stateRes, federalRes] = await Promise.all([
+        fetch('/state_labor_lookup.json'),
+        fetch('/federal_labor_lookup.json')
+      ]);
+
+      const stateData = await stateRes.json();
+      const federalData = await federalRes.json();
+
+      const stateInfo = stateData[stateElectorate] || {};
+      const federalInfo = federalData[federalElectorate] || {};
+
+      const resultsDiv = document.getElementById("labor-representatives");
+      resultsDiv.innerHTML = ""; // clear previous
+
+      if (stateInfo.state_labor_mp) {
+        resultsDiv.innerHTML += `<p>✅ <strong>State Labor MP:</strong> ${stateInfo.state_labor_mp}</p>`;
+      }
+      if (stateInfo.state_labor_duty_mlc) {
+        resultsDiv.innerHTML += `<p>✅ <strong>State Labor Duty MLC:</strong> ${stateInfo.state_labor_duty_mlc}</p>`;
+      }
+      if (federalInfo.federal_labor_mp) {
+        resultsDiv.innerHTML += `<p>✅ <strong>Federal Labor MP:</strong> ${federalInfo.federal_labor_mp}</p>`;
       }
     }
   </script>
