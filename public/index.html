@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WA Electorate Lookup</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    input { width: 300px; padding: 8px; margin-right: 10px; }
+    button { padding: 8px 12px; }
+    #result { margin-top: 20px; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+  <h1>Find Your Federal and State Electorate</h1>
+  <p>Enter your full WA address (e.g., <em>131 Guildford Road Maylands WA</em>):</p>
+  <input type="text" id="address" placeholder="Enter address" />
+  <button onclick="lookupElectorates()">Lookup</button>
+
+  <div id="result"></div>
+
+  <script>
+    async function lookupElectorates() {
+      const address = document.getElementById('address').value;
+      const result = document.getElementById('result');
+      result.innerHTML = 'Looking up...';
+
+      try {
+        const res = await fetch('/lookup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ address })
+        });
+
+        if (!res.ok) throw new Error('Something went wrong');
+        const data = await res.json();
+
+        if (!data.federal && !data.state) {
+          result.innerHTML = '<p class="error">Could not determine your electorates.</p>';
+        } else {
+          result.innerHTML = `
+            <p><strong>Federal Electorate:</strong> ${data.federal?.Elect_div || 'Unknown'}</p>
+            <p><strong>State Electorate:</strong> ${data.state?.Name || 'Unknown'}</p>
+          `;
+        }
+      } catch (err) {
+        result.innerHTML = `<p class="error">Error: ${err.message}</p>`;
+      }
+    }
+  </script>
+</body>
+</html>
